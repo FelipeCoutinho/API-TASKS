@@ -1,3 +1,4 @@
+import * as dotenv from 'dotenv'
 import "reflect-metadata"
 import {createConnection} from "typeorm"
 import route from './routes'
@@ -5,6 +6,7 @@ import * as express from 'express'
 import * as bodyparser from 'body-parser'
 import * as cors from 'cors'
 
+dotenv.config()// para o app poder ler os aquivos .env
 const app = express()
 
 createConnection()
