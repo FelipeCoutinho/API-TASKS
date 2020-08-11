@@ -15,6 +15,6 @@ app.use(bodyparser.json())// tem que ser antes das rotas
 app.use(route)
 
 app.listen(process.env.PORT || 5555,()=>{
-    console.log('server on')
+    console.log('server on port: 5555')
 })
 

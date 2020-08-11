@@ -1,17 +1,16 @@
-console.log(`url: ${process.env.DATABASE_URL}`)
-module.exports = {
+module.exports ={
    "type": "postgres",
    "url":process.env.DATABASE_URL,
    "synchronize": true,
    "logging": false,
    "entities": [
-      "dist/entity/**/*.js"
+      "src/dist/src/entity/**/*.js"
    ],
    "migrations": [
-      "src/migration/**/*.ts"
+      "src/dist/src/migration/**/*.js"
    ],
    "subscribers": [
-      "src/subscriber/**/*.ts"
+      "src/dist/src/subscriber/**/*.js"
    ],
    "cli": {
       "entitiesDir": "src/entity",
