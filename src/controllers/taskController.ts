@@ -1,4 +1,4 @@
-import {Task} from '../entity/Tasks'
+import Task from '../entity/Tasks'
 import { getRepository, AfterLoad } from 'typeorm'
 import { Request, Response } from 'express'
 import { json } from 'body-parser'
@@ -22,7 +22,9 @@ export const saveTask = async (req: Request, res: Response)=>{
 
 export const updateTask = async (req: Request,res: Response)=>{
     const {id}  = req.params
+    const dados = req.body
     const task = getRepository(Task).update(id,req.body)
+    console.log(`${id} || ${dados} `)
     // ele retorna se alguma task foi afetada no banco de dados
     if((await task).affected===1){
         // tráz um number dizendo quantas linhas foram afetadas

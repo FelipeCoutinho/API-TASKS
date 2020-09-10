@@ -8,12 +8,12 @@ import * as cors from 'cors'
 
 dotenv.config()// para o app poder ler os aquivos .env
 const app = express()
-
-createConnection()
-app.use(cors())
 app.use(bodyparser.json())// tem que ser antes das rotas
+
+app.use(cors())
 app.use(route)
 
+createConnection()
 app.listen(process.env.PORT || 5555,()=>{
     console.log('server on port: 5555')
 })
